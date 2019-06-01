@@ -22,9 +22,14 @@ class Auth extends Component{
         .then((res) => console.log(res.data))
     }
 
+    registerUser = () => {
+
+    }
+
     render(){
         return(
             <div>
+                <h1>Hello World</h1>
                 <input type="text" name="username" 
                 value={this.state.username} placeholder="username"
                 onChange={this.eventHandler} />
@@ -33,6 +38,7 @@ class Auth extends Component{
                 value={this.state.user_password} placeholder="password" 
                 onChange={this.eventHandler}/>
                 <button onClick={() => {this.loginUser}}>Login</button>
+                <button onClick={() =>{this.registerUser}}>Register</button>
             </div>
         )
     }

@@ -57,13 +57,13 @@ x7) Run `nodemon` and make sure your server runs.
 x1) Run `npm i massive dotenv`
 x2) Create an `.env` file at the root of the project.
 x3) Open your `.gitignore` and add the `.env` file to it.
-4) Open `server/index.js` and require `masssive` and `dotenv` (make sure to invoke config on `dotenv`).
-5) Go to [Heroku](https://heroku.com) and create a database (you can also use a database you already have created, but just be careful not to name your tables for Helo the same thing as any of the tables that already exist in your database)
-6) Copy the connection URI for your new or existing database and save it in your `.env` file (make sure you put `?ssl=true` on the end of the string).
-7) Create a folder called `db` at the root of the project.
-8) Set up `massive` in your server using the connection string you saved in your `.env` file.
-9) Make sure to run `nodemon` again and make sure your database is connecting.
-10) Copy the connection string from your `.env` file into `SQLTabs` and create the users table and the posts table.
+x4) Open `server/index.js` and require `masssive` and `dotenv` (make sure to invoke config on `dotenv`).
+x5) Go to [Heroku](https://heroku.com) and create a database (you can also use a database you already have created, but just be careful not to name your tables for Helo the same thing as any of the tables that already exist in your database)
+x6) Copy the connection URI for your new or existing database and save it in your `.env` file (make sure you put `?ssl=true` on the end of the string).
+x7) Create a folder called `db` at the root of the project.
+x8) Set up `massive` in your server using the connection string you saved in your `.env` file.
+x9) Make sure to run `nodemon` again and make sure your database is connecting.
+x10) Copy the connection string from your `.env` file into `SQLTabs` and create the users table and the posts table.
 x11) It's helpful to insert some dummy data into your database at this point to help you test as you go along. 
 
 # Part 1
@@ -77,7 +77,7 @@ x* A user should be able to enter a username and password into the input boxes.
 x* A user should be able to click the 'Login' button.
   x* This should fetch the user's information from the database.
   * This should direct the user to the dashboard.
-* A user should be able to click the 'Register' button.
+x* A user should be able to click the 'Register' button.
   * This should create a new user in the database with a username, password and profile picture (You can use https://robohash.org/ to generate the pictures).
   * This should send the new user information to the frontend.
   * This should direct the user to the dashboard.
