@@ -1,5 +1,4 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
 
 import Auth from './Components/Auth/Auth';
@@ -8,16 +7,18 @@ import Form from './Components/Form/Form';
 import Nav from './Components/Nav/Nav';
 import Post from './Components/Post/Post';
 
-function App() {
-  return (
-    <div className="App">
-      <Auth />
-      <Dashboard />
-      <Form />
-      <Nav />
-      <Post />
-    </div>
-  );
+class App extends Component{
+  render(){
+    return (
+      <div className="App">
+        <Auth />
+        <Dashboard />
+        <Form />
+        <Nav />
+        <Post />
+      </div>
+    );
+  }
 }
 
 export default App;

@@ -20,43 +20,43 @@ This section will help you create the files and install the packages you need.
 
 ## Repository
 Do NOT clone this repository. You will be creating your own.
-1) Navigate in the terminal to the folder you would like to store your simulation in, and then run `create-react-app helo`. `cd` into the folder to get started.
-2) `create-react-app` starts your new project out as a local git repository, so you don't have to set that up. You can start using git commands right away.
-3) Open up your Github profile page and click on 'Repositories'. 
-4) Click on the 'New' button. Name your repo (we suggest 'helo', the same name as your local folder). Do NOT initialize the repo with a README.
-5) Now go back to your terminal and run `git remote add origin [INSERT-GITHUB-URL-HERE]` with the url from the remote repo you just created.
-6) And finally, run `git push origin master -u` to push your local files to your remote repo for the first time. 
+x1) Navigate in the terminal to the folder you would like to store your simulation in, and then run `create-react-app helo`. `cd` into the folder to get started.
+x2) `create-react-app` starts your new project out as a local git repository, so you don't have to set that up. You can start using git commands right away.
+x3) Open up your Github profile page and click on 'Repositories'. 
+x4) Click on the 'New' button. Name your repo (we suggest 'helo', the same name as your local folder). Do NOT initialize the repo with a README.
+x5) Now go back to your terminal and run `git remote add origin [INSERT-GITHUB-URL-HERE]` with the url from the remote repo you just created.
+x6) And finally, run `git push origin master -u` to push your local files to your remote repo for the first time. 
 
 Make sure to commit and push your code often. It's not fun to lose hours of work.
 
 ## React
 You have already created a React application as part of setting up the Github repo, so now you will start adding packages and files to that project.
-1) Run `npm i axios react-router-dom redux react-redux`.
-2) Create a `Components` folder inside of `src`.
-3) Inside your `Components` folder create a folder for each component you will be using (Auth, Dashboard, Form, Post, Nav)
-4) Inside each of these folders create a JavaScript file named the same thing. Make sure to capitalize the first letter!
-5) Create a simple class component in the Auth, Dashboard, Form, Post, and Nav files. For now just return a div containing the component's name from the render method.
-6) Now render the Nav, Auth, Dashboard, Form, and Post components in App.
-7) Create a `routes.js` file inside the `src` folder. We will use this for our routing later.
-8) Create a folder called `ducks` inside of `src`.
-9) Create a `store.js` file and a `reducer.js` file inside of that folder.
-10) Run `npm start` to make sure everything is working. You should see the names of all the components displayed.
+x1) Run `npm i axios react-router-dom redux react-redux`.
+x2) Create a `Components` folder inside of `src`.
+x3) Inside your `Components` folder create a folder for each component you will be using (Auth, Dashboard, Form, Post, Nav)
+x4) Inside each of these folders create a JavaScript file named the same thing. Make sure to capitalize the first letter!
+x5) Create a simple class component in the Auth, Dashboard, Form, Post, and Nav files. For now just return a div containing the component's name from the render method.
+x6) Now render the Nav, Auth, Dashboard, Form, and Post components in App.
+x7) Create a `routes.js` file inside the `src` folder. We will use this for our routing later.
+x8) Create a folder called `ducks` inside of `src`.
+x9) Create a `store.js` file and a `reducer.js` file inside of that folder.
+x10) Run `npm start` to make sure everything is working. You should see the names of all the components displayed.
 
 ## Server
-1) Run `npm i express`
-2) Create a folder called `server` at the root of the project.
-3) Create an `index.js` file and a `controller.js` file inside of that folder.
-4) Open `index.js` and require your packages and the controller file.
-5) Setup a basic Express server (you will add endpoints later, just get the server ready to run).
-6) Open your `package.json`. Add your `main` property (so `nodemon` will work) and your `proxy` (so our `axios` requests will work).
+x1) Run `npm i express`
+x2) Create a folder called `server` at the root of the project.
+x3) Create an `index.js` file and a `controller.js` file inside of that folder.
+x4) Open `index.js` and require your packages and the controller file.
+x5) Setup a basic Express server (you will add endpoints later, just get the server ready to run).
+x6) Open your `package.json`. Add your `main` property (so `nodemon` will work) and your `proxy` (so our `axios` requests will work).
     * Your main should look like `"main": "server/index.js"`
     * Your proxy should look like `"proxy": "http://localhost:4000"` using whatever port your server is setup to run on (the port should not be 3000 because that is what React will be running on).
-7) Run `nodemon` and make sure your server runs.
+x7) Run `nodemon` and make sure your server runs.
 
 ## Database
-1) Run `npm i massive dotenv`
-2) Create an `.env` file at the root of the project.
-3) Open your `.gitignore` and add the `.env` file to it.
+x1) Run `npm i massive dotenv`
+x2) Create an `.env` file at the root of the project.
+x3) Open your `.gitignore` and add the `.env` file to it.
 4) Open `server/index.js` and require `masssive` and `dotenv` (make sure to invoke config on `dotenv`).
 5) Go to [Heroku](https://heroku.com) and create a database (you can also use a database you already have created, but just be careful not to name your tables for Helo the same thing as any of the tables that already exist in your database)
 6) Copy the connection URI for your new or existing database and save it in your `.env` file (make sure you put `?ssl=true` on the end of the string).
@@ -64,7 +64,7 @@ You have already created a React application as part of setting up the Github re
 8) Set up `massive` in your server using the connection string you saved in your `.env` file.
 9) Make sure to run `nodemon` again and make sure your database is connecting.
 10) Copy the connection string from your `.env` file into `SQLTabs` and create the users table and the posts table.
-11) It's helpful to insert some dummy data into your database at this point to help you test as you go along. 
+x11) It's helpful to insert some dummy data into your database at this point to help you test as you go along. 
 
 # Part 1
 
@@ -73,9 +73,9 @@ You have already created a React application as part of setting up the Github re
 In the first part you will set up routing and the ability to login/register.
 
 Functionality of the Authentication View:
-* A user should be able to enter a username and password into the input boxes.
-* A user should be able to click the 'Login' button.
-  * This should fetch the user's information from the database.
+x* A user should be able to enter a username and password into the input boxes.
+x* A user should be able to click the 'Login' button.
+  x* This should fetch the user's information from the database.
   * This should direct the user to the dashboard.
 * A user should be able to click the 'Register' button.
   * This should create a new user in the database with a username, password and profile picture (You can use https://robohash.org/ to generate the pictures).
