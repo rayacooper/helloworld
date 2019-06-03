@@ -17,14 +17,14 @@ class Auth extends Component{
         })
     };
 
-    loginUser = () => {
-        axios.get('/auth/user', this.state)
-        .then((res) => console.log(res.data))
-    }
-
     registerUser = () => {
-
-    }
+        debugger
+        axios.post('/auth/register', this.state)
+        .then(res => {
+            console.log(JSON.stringify(res.data))
+            console.log("Successful Register")
+        })
+      }
 
     render(){
         return(
@@ -37,8 +37,9 @@ class Auth extends Component{
                 <input type="password" name="user_password" 
                 value={this.state.user_password} placeholder="password" 
                 onChange={this.eventHandler}/>
-                <button onClick={() => {this.loginUser}}>Login</button>
-                <button onClick={() =>{this.registerUser}}>Register</button>
+
+                <button onClick={() => {this.props.loginUser(this.state)}}>Login</button>
+                <button onClick={() => {this.registerUser()}}>Register</button>
             </div>
         )
     }

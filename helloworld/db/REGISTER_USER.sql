@@ -1,2 +1,2 @@
-INSERT INTO skill_three (username, user_password)
-VALUES (${1}, ${2})
+INSERT INTO skill_three (username, user_password, imageurl)
+VALUES (${username}, ${user_password}, ${imageurl});

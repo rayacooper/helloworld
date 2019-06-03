@@ -29,7 +29,8 @@ massive(process.env.CONNECTION_STRING)
 //     })
 // })
 
-app.get('/auth/user', handler.login)
+app.get('/auth/user', handler.login);
+app.post('/auth/register', handler.register);
 
 const port = process.env.PORT || 8080;
 

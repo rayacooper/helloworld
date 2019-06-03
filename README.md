@@ -78,7 +78,7 @@ x* A user should be able to click the 'Login' button.
   x* This should fetch the user's information from the database.
   * This should direct the user to the dashboard.
 x* A user should be able to click the 'Register' button.
-  * This should create a new user in the database with a username, password and profile picture (You can use https://robohash.org/ to generate the pictures).
+ x * This should create a new user in the database with a username, password and profile picture (You can use https://robohash.org/ to generate the pictures).
   * This should send the new user information to the frontend.
   * This should direct the user to the dashboard.
 * A user should not see the navbar.
@@ -99,36 +99,36 @@ Dashboard View
 ## Step 1
 You are going to begin by setting up the routing.
 
-* Open `src/index.js` and bring in the `HashRouter` from `react-router-dom`. Wrap App with `HashRouter`.
-* Now open `routes.js`. Bring in `Switch` and `Route` from `react-router-dom`. Also bring in the Auth, Dashboard, Form, and Post components.
-* Set up the `Switch` component as the default export of the file.
-* Inside the `Switch`, setup a `Route` for the components you brought in.
-   * The '/' path should render the Auth component.
-   * The '/dashboard' path should render the Dashboard component.
-   * The '/post/:postid' path should render the Post component.
-   * The '/new' path should render the Form component.
-* Open `App.js` and change what you're bringing into the component.
-  * Remove Auth, Dashboard, Form, and Post from the component.
-  * Instead bring in `routes` from `routes.js` and render it instead of the other components.
+x* Open `src/index.js` and bring in the `HashRouter` from `react-router-dom`. Wrap App with `HashRouter`.
+x* Now open `routes.js`. Bring in `Switch` and `Route` from `react-router-dom`. Also bring in the Auth, Dashboard, Form, and Post components.
+x* Set up the `Switch` component as the default export of the file.
+x* Inside the `Switch`, setup a `Route` for the components you brought in.
+   x* The '/' path should render the Auth component.
+   x* The '/dashboard' path should render the Dashboard component.
+   x* The '/post/:postid' path should render the Post component.
+   x* The '/new' path should render the Form component.
+x* Open `App.js` and change what you're bringing into the component.
+  x* Remove Auth, Dashboard, Form, and Post from the component.
+  x* Instead bring in `routes` from `routes.js` and render it instead of the other components.
   * The Nav component should remain, as this will show on almost every view. 
   * The Nav component should not render if the current view is the Auth view.
     * Use the location object found on props (`this.props.location.pathname`) to programatically check which view the user is currently on. If the path is '/', the Nav component should not return anything.
     * The location object is put onto props by `react-router` kind of like the `match` object, where you can find your routing parameters.
     * <strong>IMPORTANT: Try to learn about `this.props.location.pathname` on your own, but if you get stuck the mentors can help explain what it is.</strong>
   * If you open your application in the browser you should see the navbar in every view but Auth. 
-* Create the 'Home', 'New Post', and 'Logout' buttons in the Nav component. 
-  * 'Home' should navigate to the Dashboard view.
-  * 'New Post' should navigate to the New Post view.
-  * 'Logout' should navigate to the Auth view. 
+x* Create the 'Home', 'New Post', and 'Logout' buttons in the Nav component. 
+  x* 'Home' should navigate to the Dashboard view.
+  x* 'New Post' should navigate to the New Post view.
+  x* 'Logout' should navigate to the Auth view. 
 
 ## Step 2
 Now that routing is set up, the first thing you will do is set up the authentication in the Auth view.
 
-* Setup the username and password input boxes to update state.
-  * Create initial state.
-  * Setup the input boxes to update state.
-* Create the 'Login' and 'Register' buttons in the Auth view.
-* Write a POST endpoint in your server for registering.
+x* Setup the username and password input boxes to update state.
+  x* Create initial state.
+  x* Setup the input boxes to update state.
+x* Create the 'Login' and 'Register' buttons in the Auth view.
+x* Write a POST endpoint in your server for registering.
   * The endpoint should pull the username and password off of the body.
   * The endpoint create a new user in the database.
   * The endpoint should respond with the newly created user.

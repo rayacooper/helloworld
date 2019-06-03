@@ -3,14 +3,23 @@ module.exports = {
     login: async (req, res) => {
         const {username, user_password} = req.body;
         const db = req.app.get('db');
-        db.CHECK_FOR_USER(username)
-        // db.PULL_USER_INFO
+        let userFound = await db.check_user_exists(username);
+        if(!userFound){
+            alert(`User not found. Please check your spelling kid.`)
+        }
+    
     },
 
-    register: (req, res) => {
+    register: async (req, res) => {
         const {username, user_password} = req.body;
         const db = req.app.get('db');
-        db.REGISTER_USER({username, user_password})
+        let imageurl = `https://robohash.org/${username}`
+        let userFound = await db.check_user_exists(username);
+        if (!userFound){
+            db.REGISTER_USER(username, user_password, imageurl)
+        // .then(user => {
+        //     res.status(200).send(user);
+        // })
     }
-
+    }
 }
