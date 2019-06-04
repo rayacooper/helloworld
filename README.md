@@ -152,8 +152,8 @@ x* Open `reducer.js` and create an object called `initialState`. This object sho
 x* Export a function named `reducer`. This function should take in two parameters: `state` (with the default value of `initialState`), and `action`.
 x* Set up a `switch` statement inside the `reducer` based on the action type. For now just setup a default case that returns state.
 x* Now open `store.js` and bring in `createStore` from `redux` and the `reducer` from `reducer.js`. 
-   * Create a store using the reducer you just brought in.
-   * Export that store.
+   x* Create a store using the reducer you just brought in.
+   x* Export that store.
 * Open `src/App.js` and bring in the `Provider` from `react-redux` and the `store` from `store.js`.
    * Wrap the `Provider` component around the `HashRouter` component.
    * Pass the `store` to the `Provider`.
@@ -167,11 +167,11 @@ x* Now open `store.js` and bring in `createStore` from `redux` and the `reducer`
 ## Step 4 
 Finally you will setup your Auth component to update Redux state.
 
-* In `reducer.js` write an action builder that takes in a parameter for the user id, username, and profile picture. 
-* The function should return an action object with two properties: a `type` and a `payload`.
-   * The `type` should be a string that describes what this action is supposed to do. These action type strings are usually stored in a constant outside the function.
-   * The `payload` should be an object with a property for every parameter that was passed into the function.
-   * The function should be exported.
+x* In `reducer.js` write an action builder that takes in a parameter for the user id, username, and profile picture. 
+x* The function should return an action object with two properties: a `type` and a `payload`.
+   x* The `type` should be a string that describes what this action is supposed to do. These action type strings are usually stored in a constant outside the function.
+   x* The `payload` should be an object with a property for every parameter that was passed into the function.
+   x* The function should be exported.
 * In your `reducer` function, add a `case` to the `switch` statement. 
    * The `case` should match the action type you just wrote.
    * This `case` should return an object with all the same properties you set in `initialState`.
