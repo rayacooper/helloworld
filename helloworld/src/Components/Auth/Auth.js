@@ -19,10 +19,16 @@ class Auth extends Component{
 
     registerUser = () => {
         debugger
-        axios.post('/auth/register', this.state)
+        const newUser = {
+            username: this.state.username,
+            user_password: this.state.user_password
+        }
+        axios.post('/auth/register', newUser)
         .then(res => {
-            console.log(JSON.stringify(res.data))
+            console.log(res.data)
             console.log("Successful Register")
+        }).catch(err => {
+            console.log(`Whoops: ${err}`)
         })
       }
 

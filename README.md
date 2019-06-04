@@ -129,13 +129,13 @@ x* Setup the username and password input boxes to update state.
   x* Setup the input boxes to update state.
 x* Create the 'Login' and 'Register' buttons in the Auth view.
 x* Write a POST endpoint in your server for registering.
-  * The endpoint should pull the username and password off of the body.
-  * The endpoint create a new user in the database.
-  * The endpoint should respond with the newly created user.
-* Write a method in Auth that sends an `axios` request to the endpoint you just wrote.
-  * The `axios` request should take the username and password off of state and put them in the body of the request.
+  x* The endpoint should pull the username and password off of the body.
+  x* The endpoint create a new user in the database.
+  x* The endpoint should respond with the newly created user.
+x* Write a method in Auth that sends an `axios` request to the endpoint you just wrote.
+  x* The `axios` request should take the username and password off of state and put them in the body of the request.
   * Once the response comes back, navigate to the Dashboard view.
-  * Set up the 'Register' button to fire the method.
+  x* Set up the 'Register' button to fire the method.
 * Write a POST endpoint in your server for logging in.
   * The endpoint should pull the username and password off of the body.
   * The endpoint should pull the user with the matching username and password out of the database.
@@ -148,10 +148,10 @@ x* Write a POST endpoint in your server for registering.
 ## Step 3
 Your users can now register and login, but your front end immediately forgets who just logged in. Let's fix that with Redux. First we will get Redux set up and sending values to the Nav component. 
 
-* Open `reducer.js` and create an object called `initialState`. This object should store the username, id, and profile picture for your user.
-* Export a function named `reducer`. This function should take in two parameters: `state` (with the default value of `initialState`), and `action`.
-* Set up a `switch` statement inside the `reducer` based on the action type. For now just setup a default case that returns state.
-* Now open `store.js` and bring in `createStore` from `redux` and the `reducer` from `reducer.js`. 
+x* Open `reducer.js` and create an object called `initialState`. This object should store the username, id, and profile picture for your user.
+x* Export a function named `reducer`. This function should take in two parameters: `state` (with the default value of `initialState`), and `action`.
+x* Set up a `switch` statement inside the `reducer` based on the action type. For now just setup a default case that returns state.
+x* Now open `store.js` and bring in `createStore` from `redux` and the `reducer` from `reducer.js`. 
    * Create a store using the reducer you just brought in.
    * Export that store.
 * Open `src/App.js` and bring in the `Provider` from `react-redux` and the `store` from `store.js`.
