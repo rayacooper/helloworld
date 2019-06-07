@@ -1,57 +1,61 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux'
 import axios from 'axios';
-import store, {UPDATE_NAME, UPDATE_PASSWORD} from './../../reducer';
 
 class Auth extends Component{
     constructor(props){
         super(props);
-        const reduxState = store.getState();
         this.state={
-            username: reduxState.username,
-            userpassword: reduxState.userpassword
+            username: "",
+            user_password: ""
         }
     }
-
-    // eventHandler = (e) => {
-    //     this.setState({
-    //         [e.target.name]: e.target.value
-    //     })
-    // };
 
     eventHandler = (e) => {
-        if (e.target.name === "username"){
-            store.dispatch({
-                type: UPDATE_NAME,
-                payload: e.target.value
-            })
-        }else if(e.target.name === "userpassword"){
-            store.dispatch({
-                type: UPDATE_PASSWORD,
-                payload: e.target.value
-            })
-        }
-    }
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    };
 
     loginUser = () => {
-    
+        const thisUser = {
+            username: this.state.username,
+            user_password: this.state.user_password
+        }
+        axios.post('/auth/login', thisUser)
+            .then((res) => {
+                if(res.data.success){
+                    this.props.store.dispatch({
+                        type: 'user',
+                        payload: res.data.user
+                    })
+                this.props.history.push('/dashboard')
+                }else{
+                    alert("Login error: Check your spelling")
+                }
+            })
+
     }
  
     registerUser = () => {
         const newUser = {
             username: this.state.username,
-            userpassword: this.state.userpassword
+            user_password: this.state.user_password, 
         }
         axios.post('/auth/register', newUser)
-        .then(res => {
-            alert(res.data);
-            console.log("Successful Register")
+        .then((res) => {
+            alert("Successful Register")
+            this.props.store.dispatch({
+                type: "user",
+                payload: newUser
+            });
+            this.setState({
+                username: "",
+                user_password: "",
+            });
+            this.props.history.push('/dashboard');
         }).catch(err => {
             alert(`Whoops: ${err}`)
-        })
-        this.setState({
-            username: "",
-            userpassword: "",
-            imageurl: ""
         })
       }
 
@@ -63,15 +67,15 @@ class Auth extends Component{
                 value={this.state.username} placeholder="username"
                 onChange={this.eventHandler} />
 
-                <input type="password" name="userpassword" 
-                value={this.state.userpassword} placeholder="password" 
+                <input type="password" name="user_password" 
+                value={this.state.user_password} placeholder="password" 
                 onChange={this.eventHandler}/>
 
-                <button onClick={() => {this.loginUser(this.state)}}>Login</button>
+                <button onClick={() => {this.loginUser()}}>Login</button>
                 <button onClick={() => {this.registerUser()}}>Register</button>
             </div>
         )
     }
 }
 
-export default Auth;
+export default connect(state => state)(Auth)

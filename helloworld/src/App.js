@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import axios from 'axios';
 import './App.css';
 import {BrowserRouter as Router} from 'react-router-dom';
 
@@ -15,25 +14,16 @@ class App extends Component{
       password: ""
     }
   }
-  
-  loginUser = (obj) => {
-    axios.get('/auth/user', obj)
-    .then((res) => {
-      console.log(res.data)
-      alert('Successful Login')
-    })
-  }
 
   render(){
-    
     return (
       <div>
-        <Router>
-          <Nav />
-          {routes}
-        </Router>   
+          <Router>
+            <Nav />
+            {routes}
+          </Router>           
       </div>
-    );
+    )
   }
 }
 

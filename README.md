@@ -154,10 +154,10 @@ x* Set up a `switch` statement inside the `reducer` based on the action type. Fo
 x* Now open `store.js` and bring in `createStore` from `redux` and the `reducer` from `reducer.js`. 
    x* Create a store using the reducer you just brought in.
    x* Export that store.
-* Open `src/App.js` and bring in the `Provider` from `react-redux` and the `store` from `store.js`.
-   * Wrap the `Provider` component around the `HashRouter` component.
-   * Pass the `store` to the `Provider`.
-* Go to Nav and bring in connect from `react-redux`.
+x* Open `src/App.js` and bring in the `Provider` from `react-redux` and the `store` from `store.js`.
+   x* Wrap the `Provider` component around the `HashRouter` component.
+   x* Pass the `store` to the `Provider`.
+x* Go to Nav and bring in connect from `react-redux`.
    * Write the `mapStateToProps` function at the bottom of the file.
    * Take the username and profile picture off of the Redux state.
    * Now invoke `connect`, passing in `mapStateToProps`. Immediately invoke it again passing in the name of the component.
@@ -172,17 +172,17 @@ x* The function should return an action object with two properties: a `type` and
    x* The `type` should be a string that describes what this action is supposed to do. These action type strings are usually stored in a constant outside the function.
    x* The `payload` should be an object with a property for every parameter that was passed into the function.
    x* The function should be exported.
-* In your `reducer` function, add a `case` to the `switch` statement. 
-   * The `case` should match the action type you just wrote.
-   * This `case` should return an object with all the same properties you set in `initialState`.
-   * The values of the object should be based on the values of the action payload.
-* In Auth, bring in connect from `react-redux` and the action builder you just wrote.
-* Invoke `connect` at the bottom.
-  * Pass in `null` for the first argument. This is because we don't need to use any values from Redux state.
-  * Pass in an object for the second argument. Add the action builder you just brought into Auth as a value to this object. 
-* Now update both the `register` and `login` methods.
-  * Once the user information has come back from the server, invoke the action builder and pass the information in. 
-  * The profile picture and username should now display in the navbar.
+x* In your `reducer` function, add a `case` to the `switch` statement. 
+   x* The `case` should match the action type you just wrote.
+   x* This `case` should return an object with all the same properties you set in `initialState`.
+   x* The values of the object should be based on the values of the action payload.
+x* In Auth, bring in connect from `react-redux` and the action builder you just wrote.
+x* Invoke `connect` at the bottom.
+  x* Pass in `null` for the first argument. This is because we don't need to use any values from Redux state.
+  x* Pass in an object for the second argument. Add the action builder you just brought into Auth as a value to this object. 
+x* Now update both the `register` and `login` methods.
+  x* Once the user information has come back from the server, invoke the action builder and pass the information in. 
+  x* The profile picture and username should now display in the navbar.
 
 # Part 2
 
@@ -216,13 +216,13 @@ New Post View
 ## Step 1
 First create the layout of the Dashboard.
 
-* Set up an input box for the search functionality. Make sure to store the value in state.
-* Create the 'Search' and 'Reset' buttons.
-* Set up a checkbox to include the user's posts labeled 'My Posts'. 
-  * Make sure to store the value in state.
-  * The value should be true intially.
-* Store the list of posts in state and map over the list.
-  * Each post should display the post title, and the author's username and profile picture.
+x* Set up an input box for the search functionality. Make sure to store the value in state.
+x* Create the 'Search' and 'Reset' buttons.
+x* Set up a checkbox to include the user's posts labeled 'My Posts'. 
+  x* Make sure to store the value in state.
+  x* The value should be true intially.
+x* Store the list of posts in state and map over the list.
+  x* Each post should display the post title, and the author's username and profile picture.
 
 ## Step 2
 Then write the GET endpoint to retreive all posts. This endpoint is going to accept some queries: userposts(boolean) and search(string).
